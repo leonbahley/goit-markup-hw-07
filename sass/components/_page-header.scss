@@ -1,0 +1,106 @@
+.page-header {
+  border-bottom: 1px solid #ececec;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.page-header__wrapper {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-header__nav {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  margin-right: 93px;
+}
+.logo__logo-black-part {
+  color: $logo-black-part;
+}
+.page-header__nav-list {
+  @extend %list;
+  display: flex;
+}
+.page-header__nav-item:not(:first-child) {
+  margin-left: 50px;
+}
+.page-header__studio-link,
+.page-header__portfolio-link,
+.page-header__nav-link {
+  color: $black-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &--active {
+    color: $accent-color;
+    position: relative;
+  }
+}
+.page-header__studio-link--active::after {
+  content: '';
+  background-color: $accent-color;
+  border-radius: 2px;
+  width: 48px;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(+32px);
+}
+.page-header__portfolio-link--active::after {
+  content: '';
+  background-color: $accent-color;
+  border-radius: 2px;
+  width: 78px;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(+32px);
+}
+
+.page-header__contact-info {
+  @extend %list;
+  display: flex;
+}
+.page-header__e-mail,
+.page-header__tel {
+  color: $main-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-header__icon-mail,
+.page-header__icon-tel {
+  fill: currentColor;
+  margin-right: 10px;
+}
+.page-header__contact-item:not(:first-child) {
+  margin-left: 50px;
+}
+.page-header__studio-link:hover,
+.page-header__studio-link:focus,
+.page-header__portfolio-link:hover,
+.page-header__portfolio-link:focus,
+.page-header__nav-link:focus,
+.page-header__nav-link:hover,
+.page-header__e-mail:focus,
+.page-header__e-mail:hover,
+.page-header__tel:focus,
+.page-header__tel:hover {
+  color: $accent-color;
+}
